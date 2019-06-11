@@ -1,0 +1,17 @@
+ion-header{
+          --ion-background-color:#6BDBEF;
+}
+
+@media screen and (orientation: portrait) {
+  .weekly-stats {
+    width: 0.7;
+    height: 0.82;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .weekly-stats {
+    width: 0.7;
+    height: 0.82;
+  }
+}
