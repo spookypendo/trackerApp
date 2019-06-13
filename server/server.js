@@ -37,11 +37,18 @@ var patientDetails = mongoose.model('patientDetails', new Schema({
     art_status : String
 }),'patientDetails');
 
+var appointmentRegistries = mongoose.model('appointmentRegistries', new Schema({
+    "_id" : Object,
+    "patient_ID" : String,
+    "Appointment_date" : Date,
+    "Appointment_outcome" : String
+}),'appointmentRegistries');
+
 // Routes
 
-    // Get patients
+    // View all patients
 
-    app.get('/api/patients', function(req, res) {
+    app.get('/view/patients', function(req, res) {
 
         console.log("fetching patients");
 
@@ -55,7 +62,61 @@ var patientDetails = mongoose.model('patientDetails', new Schema({
             res.json(patients); // return all patients in JSON format
         });
     });
+    
+    // Display total number of patients who are on appointment today
+    
+    var start = new Date();
+    start.setHours(0,0,0,0);
 
+    var end = new Date();
+    end.setHours(23,59,59,999); 
+    
+    app.get('/count/appointments', function(req, res) {
+
+        console.log("fetching appointments");
+
+        // use mongoose to get all patients in the database
+        appointmentRegistries.count({Appointment_date: {$gte: start, $lt: end}}, function(err, appointments) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(appointments); // return all patients in JSON format
+        });
+    });
+    
+    // Display total number of patients who attended today
+    app.get('/count/appointments/attended/:date', function(req, res) {
+
+        console.log("fetching appointments");
+
+        // use mongoose to get all patients in the database
+        appointmentRegistries.count({Appointment_date: {$gte: start, $lt: end}, Appointment_outcome: "Attended"}, function(err, appointments) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(appointments); // return all patients in JSON format
+        });
+    });
+    
+    // Display total number of patients who missed today
+    app.get('/count/appointments/missed/:date', function(req, res) {
+
+        console.log("fetching appointments");
+
+        // use mongoose to get all patients in the database
+        appointmentRegistries.count({Appointment_date: {$gte: start, $lt: end}, Appointment_outcome: "Missed"}, function(err, appointments) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(appointments); // return all patients in JSON format
+        });
+    });
 
 // listen (start app with node server.js) ======================================
 app.listen(8080);
