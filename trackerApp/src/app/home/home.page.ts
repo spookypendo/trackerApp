@@ -9,22 +9,8 @@ import { HttpClient } from '@angular/common/http';
 
 export class HomePage {
 
-  attended_number = 0;
-  missed_number = 0;
-  total_number = 0;
-
   constructor(private http: HttpClient) {
-    this.http.get('http://localhost:8080/count/appointments/').subscribe((response) => {
-      this.total_number = response;
-    });
 
-    this.http.get('http://localhost:8080/count/appointments/attended/:date/').subscribe((response) => {
-      this.attended_number = response;
-    });
-
-    this.http.get('http://localhost:8080/count/appointments/missed/:date/').subscribe((response) => {
-      this.missed_number = response;
-    });
   }
 
   weeklyStatsBarChart = {
@@ -120,8 +106,8 @@ export class HomePage {
                 }
             },
             data:[
-                {value:this.attended_number, name:'Attended', itemStyle: {color: '#3398DB'}},
-                {value:this.missed_number, name:'Missed', itemStyle: {color: '#6BDBEF'}}
+                {value:0.7, name:'Attended', itemStyle: {color: '#3398DB'}},
+                {value:0.3, name:'Missed', itemStyle: {color: '#6BDBEF'}}
             ]
         }
     ]
