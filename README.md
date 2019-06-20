@@ -1,6 +1,7 @@
 ===================Welcome to trackerApp git repository=============================
 
-The project was developed using Ionic framework. Development version was Ionic version 4.12.0, I do not anticipate issues with versions latter than this.
+The project was developed using Ionic framework. Development version was Ionic version 4.12.0.
+There are serious build issues if versions don't match. For example I tried angular cli version 7 did not work with the new ionic 5 update.
 
 Setting up the environment
 --------------------------
