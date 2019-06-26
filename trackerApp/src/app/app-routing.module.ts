@@ -9,16 +9,24 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    loadChildren: './pages/home/home.module#HomePageModule'
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+    path: 'appointment-registry',
+    loadChildren: './pages/appointment-registry/appointment-registry.module#AppointmentRegistryPageModule'
   },
-  { path: 'appointment-registry', loadChildren: './appointment-registry/appointment-registry.module#AppointmentRegistryPageModule' },
-  { path: 'tracking', loadChildren: './tracking/tracking.module#TrackingPageModule' },
-  { path: 'reports', loadChildren: './reports/reports.module#ReportsPageModule' },
-  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' }
+  {
+    path: 'tracking',
+    loadChildren: './pages/tracking/tracking.module#TrackingPageModule'
+  },
+  {
+    path: 'reports',
+    loadChildren: './pages/reports/reports.module#ReportsPageModule'
+  },
+  {
+    path: 'settings',
+    loadChildren: './pages/settings/settings.module#SettingsPageModule'
+  }
 ];
 
 @NgModule({
