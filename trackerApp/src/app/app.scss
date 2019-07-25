@@ -4,12 +4,49 @@
 // styles are for the entire app and not just one component. Additionally, this
 // file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
+
+ion-app{
+  font-family: acumin-pro, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
 ion-menu{
       ion-content{
-          --ion-background-color:#3398DB
+          --ion-background-color:#113A58;
+          --ion-background-color-rgb:rgb(17, 58, 88);
+          color:#FFFFFF;
+          --ion-text-color: #FFFFFF;
+      }
+
+      ion-header{
+        min-height:112px!important;
+        --ion-background-color: linear-gradient(to bottom right, #247DC7, #34A9B3);
       }
 }
 
 ion-header{
-  --ion-background-color:#6BDBEF
+  --ion-background-color: #00A0D4;
+  --ion-text-color: #FFFFFF;
+}
+
+ion-content{
+--background-color: black!important;
+}
+
+ion-card{
+  --color: #FFFFFF;
+  background-color: red;
+}
+
+ion-icon{
+  color:#FFFFFF;
+}
+
+ion-tabs{
+  --ion-tab-bar-background:#00A0D4;
+  --ion-tab-bar-background-focused:#00A8E0;
+  --ion-tab-bar-border-color:#FFFFFF;
+  --ion-tab-bar-color:#FFFFFF;
+  --ion-tab-bar-color-activated:#FFFFFF;
 }
