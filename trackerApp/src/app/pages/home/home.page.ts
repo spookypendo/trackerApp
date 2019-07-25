@@ -23,9 +23,9 @@ export class HomePage implements OnInit {
   constructor(private appService : AppService) {}
 
   ngOnInit() {
-    this.appService.getCountTotal().subscribe(data => {
-      this.count_total = data;
-    });
+    //this.appService.getCountTotal().subscribe(data => {
+      //this.count_total = data;
+    //});
   }
 
   weeklyStatsBarChart = {

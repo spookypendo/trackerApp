@@ -38,11 +38,33 @@ var patientDetails = mongoose.model('patientDetails', new Schema({
 }),'patientDetails');
 
 var appointmentRegistries = mongoose.model('appointmentRegistries', new Schema({
-    "_id" : Object,
-    "patient_ID" : String,
-    "Appointment_date" : Date,
-    "Appointment_outcome" : String
+    _id : Object,
+    patient_ID : String,
+    Appointment_date : Date,
+    Appointment_outcome : String
 }),'appointmentRegistries');
+
+var promiseToCome = mongoose.model('promiseToCome', new Schema({
+    _id : Object,
+    patient_ID : String,
+    Appointment_date : Date,
+    Promise_date : Date,
+    Update_status : String
+}),'promiseToCome');
+
+var tracking = mongoose.model('tracking', new Schema({
+    _id : Object,
+    patient_ID : String,
+    track_outcome : String
+}),'tracking');
+
+var visitRegistries = mongoose.model('visitRegistries', new Schema({
+    _id : Object,
+     patient_ID : String,
+     Visit_date : Date,
+     Appointment_date : Date,
+     status : String
+}),'visitRegistries');
 
 // Routes
 
@@ -62,15 +84,119 @@ var appointmentRegistries = mongoose.model('appointmentRegistries', new Schema({
             res.json(patients); // return all patients in JSON format
         });
     });
-    
+
+    app.get('/view/patients/:patient_ID', function(req, res) {
+
+        console.log("fetching patients");
+
+        patientDetails.find({patient_ID:req.params.patient_ID}, function(err, patients) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(patients); // return in JSON format
+        });
+    });
+
+    // View appointments
+    app.get('/view/appointments', function(req, res) {
+
+        console.log("fetching appointments");
+
+        appointmentRegistries.find(function(err, appointments) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(appointments); // return data in JSON format
+        });
+    });
+
+    // View appointments details for a specific patient
+    app.get('/view/appointments/:patient_ID', function(req, res) {
+
+        console.log("fetching appointment details");
+
+        appointmentRegistries.find({patient_ID:"07-01-0100-38606"}, function(err, appointment_details) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(appointment_details); // return data in JSON format
+        });
+    });
+
+    // View visit details for a specific patient
+    app.get('/view/visits/:patient_ID', function(req, res) {
+
+        console.log("fetching visit details");
+
+        visitRegistries.find({patient_ID:req.params.patient_ID}, function(err, visit_details) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(visit_details); // return data in JSON format
+        });
+    });
+
+    // Add visit record
+    app.get('/add/visits/:patient_ID', function(req, res) {
+
+        console.log("Adding visit record");
+
+        visitRegistries.create({patient_ID:"07-01-0100-38606", Visit_date:"2019-07-09"}, function(err, status) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(status); // return data in JSON format
+        });
+    });
+
+    // Add appointment record
+    app.get('/add/appointment/:patient_ID', function(req, res) {
+
+        console.log("Adding appointment record");
+
+        appointmentRegistries.create({patient_ID:"07-01-0100-38606", Appointment_date:"2019-07-09"}, function(err, status) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(status); // return data in JSON format
+        });
+    });
+
+    //Update specific details for a patient
+    app.get('/update/appointments/:patient_ID', function(req, res) {
+
+        console.log("updating details");
+
+        appointmentRegistries.updateOne({patient_ID:"07-01-0100-38606"}, {$set: {"Appointment_outcome":"Attended"}}, function(err, status) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(status); // return data in JSON format
+        });
+    });
+
     // Display total number of patients who are on appointment today
-    
+
     var start = new Date();
     start.setHours(0,0,0,0);
 
     var end = new Date();
-    end.setHours(23,59,59,999); 
-    
+    end.setHours(23,59,59,999);
+
     app.get('/count/appointments', function(req, res) {
 
         console.log("fetching appointments");
@@ -85,7 +211,7 @@ var appointmentRegistries = mongoose.model('appointmentRegistries', new Schema({
             res.json(appointments); // return all patients in JSON format
         });
     });
-    
+
     // Display total number of patients who attended today
     app.get('/count/appointments/attended/:date', function(req, res) {
 
@@ -101,7 +227,7 @@ var appointmentRegistries = mongoose.model('appointmentRegistries', new Schema({
             res.json(appointments); // return all patients in JSON format
         });
     });
-    
+
     // Display total number of patients who missed today
     app.get('/count/appointments/missed/:date', function(req, res) {
 

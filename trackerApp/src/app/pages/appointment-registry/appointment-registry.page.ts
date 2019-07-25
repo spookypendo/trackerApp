@@ -16,11 +16,11 @@ import {PromiseToCome} from '../../models/promise-to-come.model';
 })
 export class AppointmentRegistryPage implements OnInit {
 
-  public patients : Observable<PatientDetails[]>;
+  public appointments : Observable<AppointmentRegistries[]>;
   constructor(private appService : AppService) { }
 
   ngOnInit() {
-    this.patients = this.appService.getAllPatients();
+    this.appointments = this.appService.getAppointments();
   }
 
 }
