@@ -16,11 +16,14 @@ import {PromiseToCome} from '../../models/promise-to-come.model';
 })
 export class AppointmentRegistryPage implements OnInit {
 
-  public appointments : Observable<AppointmentRegistries[]>;
+  public appointments: AppointmentRegistries[] = [];
+  public date: Date = new Date();
   constructor(private appService : AppService) { }
 
   ngOnInit() {
-    this.appointments = this.appService.getAppointments();
+    this.appService.getAppointmentsListByDate(this.date.toISOString().slice(0,10)).subscribe((data: AppointmentRegistries[]) => {
+            this.appointments = data;
+          });
   }
 
 }

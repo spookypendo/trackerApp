@@ -9,6 +9,7 @@ import {AppointmentRegistries} from '../../models/appointment-registries.model';
   templateUrl: './tracking.page.html',
   styleUrls: ['./tracking.page.scss'],
 })
+
 export class TrackingPage implements OnInit {
 
   public appointments : Observable<AppointmentRegistries[]>;
@@ -17,5 +18,4 @@ export class TrackingPage implements OnInit {
   ngOnInit() {
     this.appointments = this.appService.getAppointments();
   }
-
 }

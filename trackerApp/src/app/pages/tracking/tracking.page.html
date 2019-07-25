@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-list class="appointments__list" *ngIf="(appointments | async).length">
+  <ion-list class="appointments__list">
     <ion-item [href]="'/patient-summary/'+ appointment.patient_ID" routeDirection="forward" class="appointment" *ngFor="let appointment of appointments | async">
         <ion-label>{{ appointment.patient_ID }} {{ appointment.Appointment_date | date }}</ion-label>
     </ion-item>

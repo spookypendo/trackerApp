@@ -27,4 +27,8 @@ export class AppService {
   getPatientDetails(patient_ID){
     return this.http.get<PatientDetails[]>('http://localhost:8080/view/patients/'+patient_ID);
   }
+
+  getAppointmentsListByDate(date){
+    return this.http.get<AppointmentRegistries[]>('http://localhost:8080/view/appointments/'+date);
+  }
 }

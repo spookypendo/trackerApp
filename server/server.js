@@ -40,7 +40,7 @@ var patientDetails = mongoose.model('patientDetails', new Schema({
 var appointmentRegistries = mongoose.model('appointmentRegistries', new Schema({
     _id : Object,
     patient_ID : String,
-    Appointment_date : Date,
+    Appointment_date : String,
     Appointment_outcome : String
 }),'appointmentRegistries');
 
@@ -96,6 +96,22 @@ var visitRegistries = mongoose.model('visitRegistries', new Schema({
                 res.send(err)
 
             res.json(patients); // return in JSON format
+        });
+    });
+
+
+    // View appointments
+    app.get('/view/appointments/:date', function(req, res) {
+
+        console.log("fetching appointments");
+
+        appointmentRegistries.find({Appointment_date:req.params.date}, function(err, appointments) {
+
+            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(appointments); // return data in JSON format
         });
     });
 
