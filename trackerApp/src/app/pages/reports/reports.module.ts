@@ -5,7 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
+import {NgxEchartsModule} from 'ngx-echarts';
+
 import { ReportsPage } from './reports.page';
+
+
 
 const routes: Routes = [
   {
@@ -19,6 +23,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    NgxEchartsModule,
     RouterModule.forChild(routes)
   ],
   declarations: [ReportsPage]
