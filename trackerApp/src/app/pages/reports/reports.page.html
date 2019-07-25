@@ -10,33 +10,88 @@
 </ion-header>
 
 <ion-content>
- <ion-card>
+<ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="Week">
+        <ion-label>WEEK</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="Month">
+        <ion-label>MONTH</ion-label>
+      </ion-tab-button>
+
+      <ion-tab-button tab="threeMonth">
+        <ion-label>3 MONTHS</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  <ion-card>
     <ion-card-content>
-      <ion-tabs>
-        <ion-tab-bar slot="top">
-          <ion-tab-button tab="schedule">
-            <ion-icon name="calendar"></ion-icon>
-            <ion-label>Schedule</ion-label>
-            <ion-badge>6</ion-badge>
-          </ion-tab-button>
-
-          <ion-tab-button tab="speakers">
-            <ion-icon name="contacts"></ion-icon>
-            <ion-label>Speakers</ion-label>
-          </ion-tab-button>
-
-          <ion-tab-button tab="map">
-            <ion-icon name="map"></ion-icon>
-            <ion-label>Map</ion-label>
-          </ion-tab-button>
-
-          <ion-tab-button tab="about">
-            <ion-icon name="information-circle"></ion-icon>
-            <ion-label>About</ion-label>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-      
+      <div echarts [options]="weeklyReportChart"></div>
+    </ion-card-content>
+  </ion-card>
+<ion-card>
+    <ion-grid>
+        <ion-row>
+            <ion-col><div>Day</div></ion-col>
+            <ion-col><div>Attended</div></ion-col>
+            <ion-col><div>Missed</div></ion-col>
+            <ion-col><div>Tracked</div></ion-col>
+            <ion-col><div>Actions</div></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><div>Mon</div></ion-col>
+            <ion-col><div>10</div></ion-col>
+            <ion-col><div>5</div></ion-col>
+            <ion-col><div>4</div></ion-col>
+            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><div>Tue</div></ion-col>
+            <ion-col><div>20</div></ion-col>
+            <ion-col><div>4</div></ion-col>
+            <ion-col><div>3</div></ion-col>
+            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><div>Wed</div></ion-col>
+            <ion-col><div>20</div></ion-col>
+            <ion-col><div>4</div></ion-col>
+            <ion-col><div>3</div></ion-col>
+            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><div>Thu</div></ion-col>
+            <ion-col><div>20</div></ion-col>
+            <ion-col><div>4</div></ion-col>
+            <ion-col><div>3</div></ion-col>
+            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><div>Fri</div></ion-col>
+            <ion-col><div>20</div></ion-col>
+            <ion-col><div>4</div></ion-col>
+            <ion-col><div>3</div></ion-col>
+            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><div>Sat</div></ion-col>
+            <ion-col><div>20</div></ion-col>
+            <ion-col><div>4</div></ion-col>
+            <ion-col><div>3</div></ion-col>
+            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col><div>Sun</div></ion-col>
+            <ion-col><div>20</div></ion-col>
+            <ion-col><div>4</div></ion-col>
+            <ion-col><div>3</div></ion-col>
+            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    <ion-card>
+    <ion-card-content>
       <div echarts [options]="reportsBar"></div>
     </ion-card-content>
   </ion-card>

@@ -6,14 +6,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reports.page.scss'],
 })
 export class ReportsPage implements OnInit {
+    weeklyReportChart = {
+        title : {
+            text: 'Today Registry',
+            subtext: ''
+        },
+        tooltip: {
+            trigger: 'item',
+        },
+        series: [
+            {
+                name: 'Daily summary',
+                type: 'pie',
+                radius: ['30%', '50%'],
+                avoidLabelOverlap: true,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: false,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data: [
+                    {value: 0.6, name: 'Attended', itemStyle: {color: '#4CAF50'}},
+                    {value: 0.3, name: 'Tracked', itemStyle: {color: '#3398DB'}},
+                    {value: 0.1, name: 'Missed', itemStyle: {color: '#FF8A80'}}
+                ]
+            }
+        ]
+    };
 
-  constructor() { }
-
-  public test = 2;
-
-  ngOnInit() {
-  }
-  reportsBar = {
+    reportsBar = {
     title : {
       text: 'Weekly summary',
       subtext: '22 - 28 July 2019'
@@ -26,8 +60,8 @@ export class ReportsPage implements OnInit {
     },
     legend: {
         data: [ 'Missed', 'Tracked', 'Appointment'],
-        x:'right',
-        orient:'vertical'
+        x: 'right',
+        orient: 'vertical'
     },
     grid: {
         left: '3%',
@@ -81,5 +115,12 @@ export class ReportsPage implements OnInit {
         }
     ]
 };
+
+constructor() { }
+
+  public test = 2;
+
+  ngOnInit() {
+  }
 }
 
