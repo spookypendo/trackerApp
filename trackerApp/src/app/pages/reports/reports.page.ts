@@ -39,9 +39,9 @@ export class ReportsPage implements OnInit {
                     }
                 },
                 data: [
-                    {value: 0.6, name: 'Attended', itemStyle: {color: '#4CAF50'}},
-                    {value: 0.3, name: 'Tracked', itemStyle: {color: '#3398DB'}},
-                    {value: 0.1, name: 'Missed', itemStyle: {color: '#FF8A80'}}
+                    {value: 0.6, name: 'Attended', itemStyle: {color: '#2786C4'}},
+                    {value: 0.3, name: 'Tracked', itemStyle: {color: '#6BDBEF'}},
+                    {value: 0.1, name: 'Missed', itemStyle: {color: '#D32F2F'}}
                 ]
             }
         ]
@@ -59,7 +59,7 @@ export class ReportsPage implements OnInit {
         }
     },
     legend: {
-        data: [ 'Missed', 'Tracked', 'Appointment'],
+        data: [ 'Attended', 'Missed', 'Tracked'],
         x: 'right',
         orient: 'vertical'
     },
@@ -78,7 +78,7 @@ export class ReportsPage implements OnInit {
     },
     series: [
         {
-            name: 'Missed',
+            name: 'Attended',
             type: 'bar',
             stack: '总量',
             label: {
@@ -87,7 +87,8 @@ export class ReportsPage implements OnInit {
                     position: 'insideRight'
                 }
             },
-            data: [320, 302, 301, 334, 390, 330, 320]
+            data: [23, 40, 34, 54, 43, 56, 60],
+            itemStyle: {color: '#2786C4'}
         },
         {
             name: 'Tracked',
@@ -99,10 +100,11 @@ export class ReportsPage implements OnInit {
                     position: 'insideRight'
                 }
             },
-            data: [120, 132, 101, 134, 90, 230, 210]
+            data: [15, 6, 3, 4, 3, 0, 5],
+            itemStyle: {color: '#6BDBEF'}
         },
         {
-            name: 'Appointment',
+            name: 'Missed',
             type: 'bar',
             stack: '总量',
             label: {
@@ -111,7 +113,8 @@ export class ReportsPage implements OnInit {
                     position: 'insideRight'
                 }
             },
-            data: [220, 182, 191, 234, 290, 330, 310]
+            data: [10, 13, 3, 11, 3, 0, 4],
+            itemStyle: {color: '#D32F2F'}
         }
     ]
 };

@@ -19,15 +19,6 @@ import {PromiseToCome} from '../../models/promise-to-come.model';
 
 export class HomePage implements OnInit {
 
-  public count_total: any;
-  constructor(private appService: AppService) {}
-
-  ngOnInit() {
-    this.appService.getCountTotal().subscribe(data => {
-      this.count_total = data;
-    });
-  }
-
   weeklyStatsBarChart = {
     title : {
         text: 'Weekly summary',
@@ -37,7 +28,7 @@ export class HomePage implements OnInit {
         trigger: 'item'
     },
     legend: {
-        data: [ 'Attended', 'Missed'],
+        data: [ 'Attended', 'Tracked', 'Missed'],
         x: 'right',
         orient: 'vertical'
     },
@@ -73,17 +64,24 @@ export class HomePage implements OnInit {
       {
         name: 'Attended',
         type: 'bar',
-        color: '#3398DB',
-        barWidth: '30%',
+        color: '#2786C4',
+        barWidth: '20%',
         containLabel: true,
-        data: [10, 52, 200, 334, 390, 330, 220]
+        data: [23, 40, 34, 54, 43, 56, 6]
+      },
+      {
+        name: 'Tracked',
+        type: 'bar',
+        color: '#6BDBEF',
+        barWidth: '20%',
+        data: [15, 6, 3, 4, 3, 0, 5]
       },
       {
         name: 'Missed',
         type: 'bar',
-        color: '#6BDBEF',
-        barWidth: '30%',
-        data: [12, 50, 100, 324, 350, 310, 200]
+        color: '#D32F2F',
+        barWidth: '20%',
+        data: [10, 13, 3, 11, 3, 0, 4]
       }
     ],
   };
@@ -121,11 +119,19 @@ export class HomePage implements OnInit {
                 }
             },
             data: [
-                {value: 0.7, name: 'Attended', itemStyle: {color: '#3398DB'}},
-                {value: 0.3, name: 'Missed', itemStyle: {color: '#6BDBEF'}}
+              {value: 0.6, name: 'Attended', itemStyle: {color: '#2786C4'}},
+              {value: 0.3, name: 'Tracked', itemStyle: {color: '#6BDBEF'}},
+              {value: 0.1, name: 'Missed', itemStyle: {color: '#D32F2F'}}
             ]
         }
     ]
-};
+  };
+  public countTotal: any;
+  constructor(private appService: AppService) {}
 
+  ngOnInit() {
+    this.appService.getCountTotal().subscribe(data => {
+      this.countTotal = data;
+    });
+  }
 }
