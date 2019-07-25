@@ -19,8 +19,8 @@ import {PromiseToCome} from '../../models/promise-to-come.model';
 
 export class HomePage implements OnInit {
 
-  public count_total : any;
-  constructor(private appService : AppService) {}
+  public count_total: any;
+  constructor(private appService: AppService) {}
 
   ngOnInit() {
     this.appService.getCountTotal().subscribe(data => {
@@ -37,9 +37,9 @@ export class HomePage implements OnInit {
         trigger: 'item'
     },
     legend: {
-        data:['Attended','Missed'],
-        x:'right',
-        orient:'vertical'
+        data: [ 'Attended', 'Missed'],
+        x: 'right',
+        orient: 'vertical'
     },
     toolbox: {
        show : false,
@@ -73,7 +73,7 @@ export class HomePage implements OnInit {
       {
         name: 'Attended',
         type: 'bar',
-        color:'#3398DB',
+        color: '#3398DB',
         barWidth: '30%',
         containLabel: true,
         data: [10, 52, 200, 334, 390, 330, 220]
@@ -98,8 +98,8 @@ export class HomePage implements OnInit {
     },
     series: [
         {
-            name:'Daily summary',
-            type:'pie',
+            name: 'Daily summary',
+            type: 'pie',
             radius: ['30%', '50%'],
             avoidLabelOverlap: true,
             label: {
@@ -120,9 +120,9 @@ export class HomePage implements OnInit {
                     show: false
                 }
             },
-            data:[
-                {value:0.7, name:'Attended', itemStyle: {color: '#3398DB'}},
-                {value:0.3, name:'Missed', itemStyle: {color: '#6BDBEF'}}
+            data: [
+                {value: 0.7, name: 'Attended', itemStyle: {color: '#3398DB'}},
+                {value: 0.3, name: 'Missed', itemStyle: {color: '#6BDBEF'}}
             ]
         }
     ]
