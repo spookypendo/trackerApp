@@ -5,8 +5,8 @@
 // file can hold Sass mixins, functions, and placeholder classes to be imported
 // and used throughout the application.
 
-ion-app{
-  font-family: acumin-pro, sans-serif;
+*{
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
 }
@@ -28,10 +28,6 @@ ion-menu{
 ion-header{
   --ion-background-color: #00A0D4;
   --ion-text-color: #FFFFFF;
-}
-
-ion-content{
---background-color: black!important;
 }
 
 ion-card{
