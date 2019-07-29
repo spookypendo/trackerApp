@@ -31,4 +31,8 @@ export class AppService {
   getAppointmentsListByDate(date){
     return this.http.get<AppointmentRegistries[]>('http://localhost:8080/view/appointments/'+date);
   }
+
+  getAppointmentsByStatus(status){
+    return this.http.get<AppointmentRegistries[]>('http://localhost:8080/view/appointments/by-status/'+status);
+  }
 }

@@ -18,6 +18,7 @@
       <ion-list class="appointments__list">
         <ion-item class="appointment" *ngFor="let appointment of appointments">
             <ion-label>{{ appointment.patient_ID }} {{ appointment.Appointment_date | date }}</ion-label>
+            <ion-button href="#">Update</ion-button>
         </ion-item>
       </ion-list>
     </ion-card-content>
