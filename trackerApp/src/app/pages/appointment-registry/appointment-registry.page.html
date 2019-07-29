@@ -10,9 +10,16 @@
 </ion-header>
 
 <ion-content>
-  <ul class="patients__list" *ngIf="(patients | async).length">
-    <li class="patient" *ngFor="let patient of patients | async">
-        {{ patient.patient_ID }} - {{ patient.dob }}
-    </li>
-  </ul>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Today's appointments</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="appointments__list">
+        <ion-item class="appointment" *ngFor="let appointment of appointments">
+            <ion-label>{{ appointment.patient_ID }} {{ appointment.Appointment_date | date }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: './pages/appointment-registry/appointment-registry.module#AppointmentRegistryPageModule'
   },
   {
-    path: 'tracking',
+    path: 'ctctracking',
     loadChildren: './pages/tracking/tracking.module#TrackingPageModule'
   },
   {
@@ -26,7 +26,8 @@ const routes: Routes = [
   {
     path: 'settings',
     loadChildren: './pages/settings/settings.module#SettingsPageModule'
-  }
+  },
+  { path: 'patient-summary/:patient_ID', loadChildren: './pages/patient-summary/patient-summary.module#PatientSummaryPageModule' }
 ];
 
 @NgModule({
