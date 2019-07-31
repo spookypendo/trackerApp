@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { PatientSummaryPage } from './patient-summary.page';
 
+import { AgmCoreModule } from '@agm/core';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,7 +21,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDm9hflD2s237SNfjMoMq2I4FHPLTzG48Q'
+    })
   ],
   declarations: [PatientSummaryPage]
 })

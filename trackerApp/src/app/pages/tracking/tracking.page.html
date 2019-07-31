@@ -4,15 +4,20 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      CTC Tracking
+      Tracking
     </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-searchbar></ion-searchbar>
   <ion-list>
     <span *ngFor="let appointment of appointments">
       <ion-item *ngIf="checkDays(appointment.Appointment_date)" [routerLink]="['/patient-summary/', appointment.patient_ID]" routeDirection="forward">
-          <ion-label>{{ appointment.patient_ID }} {{ appointment.Appointment_date}}</ion-label>
+        <ion-label>
+          <h3>PID: {{ appointment.patient_ID }} </h3>
+          <p>Appointment: {{ appointment.Appointment_date | date }} </p>
+          <p>Status: </p>
+        </ion-label>
       </ion-item>
     </span>
   </ion-list>

@@ -130,8 +130,8 @@ export class HomePage implements OnInit {
   constructor(private appService: AppService) {}
 
   ngOnInit() {
-    this.appService.getCountTotal().subscribe(data => {
-      this.countTotal = data;
-    });
+    //this.appService.getCountTotal().subscribe(data => {
+      //this.countTotal = data;
+  //  });
   }
 }

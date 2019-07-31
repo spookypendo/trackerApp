@@ -24,6 +24,14 @@ export class AppService {
     return this.http.get<AppointmentRegistries[]>('http://localhost:8080/view/appointments');
   }
 
+  getAppointmentById(patient_ID){
+    return this.http.get<AppointmentRegistries[]>('http://localhost:8080/view/appointments/by-id/'+patient_ID);
+  }
+
+  getVisitDetailsById(patient_ID){
+    return this.http.get<VisitRegistries[]>('http://localhost:8080/view/visits/'+patient_ID);
+  }
+
   getPatientDetails(patient_ID){
     return this.http.get<PatientDetails[]>('http://localhost:8080/view/patients/'+patient_ID);
   }
