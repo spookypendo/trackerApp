@@ -27,7 +27,12 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: './pages/settings/settings.module#SettingsPageModule'
   },
-  { path: 'patient-summary/:patient_ID', loadChildren: './pages/patient-summary/patient-summary.module#PatientSummaryPageModule' }
+  {
+    path: 'patient-summary/:patient_ID', loadChildren: './pages/patient-summary/patient-summary.module#PatientSummaryPageModule'
+  },
+  {
+    path: 'appointment-summary/:patient_ID', loadChildren: './pages/appointment-summary/appointment-summary.module#AppointmentSummaryPageModule'
+  }
 ];
 
 @NgModule({
