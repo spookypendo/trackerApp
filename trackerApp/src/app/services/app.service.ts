@@ -16,19 +16,19 @@ import {PromiseToCome} from 'src/app/models/promise-to-come.model';
 export class AppService {
   constructor(private http: HttpClient) { }
 
-  getAllPatients() : Observable<PatientDetails[]> {
+  getAllPatients(){
     return this.http.get<PatientDetails[]>('http://localhost:8080/view/patients');
   }
 
-  getCountAttendees() {
-    return this.http.get('http://localhost:8080/count/appointments/attended/:date');
+  getAppointments(){
+    return this.http.get<AppointmentRegistries[]>('http://localhost:8080/view/appointments');
   }
 
-  getCountMissed(){
-    return this.http.get('http://localhost:8080/count/appointments/missed/:date');
+  getPatientDetails(patient_ID){
+    return this.http.get<PatientDetails[]>('http://localhost:8080/view/patients/'+patient_ID);
   }
 
-  getCountTotal(){
-    return this.http.get('http://localhost:8080/count/appointments');
+  getAppointmentsListByDate(date){
+    return this.http.get<AppointmentRegistries[]>('http://localhost:8080/view/appointments/'+date);
   }
 }

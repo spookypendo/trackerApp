@@ -21,8 +21,8 @@ export class AppComponent {
       icon: 'person'
     },
     {
-      title: 'Tracking',
-      url: '/tracking',
+      title: 'CTC Tracking',
+      url: '/ctctracking',
       icon: 'filing'
     },
     {
