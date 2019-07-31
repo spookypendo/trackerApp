@@ -1,3 +1,46 @@
+.small-card{
+height:25%!important;
+padding: 1%;
+}
+
+.sidebysideStats{
+float: left;
+width: 55%;
+height: 95%;
+}
+
+.sidebysideStats h6{
+margin-top: 5%;
+}
+
+.doughChart{
+    float: left;
+    width: 35%;
+    height: 95%;
+}
+
+.statsLabel{
+    float: left;
+    width: 5%;
+    height: 95%;
+    padding-top: 50px;
+}
+
+.sideStats{
+    float: left;
+    width: 24%;
+    margin-left:1%;
+}
+
+.sideStats p{
+    text-align: center;
+    font-size: 8px;
+}
+
+
+ion-icon{
+    color:#424242;
+}
 ion-grid{
     ion-icon{
         color:rgb(29, 28, 28);

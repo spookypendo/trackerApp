@@ -6,11 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reports.page.scss'],
 })
 export class ReportsPage implements OnInit {
-    weeklyReportChart = {
-        title : {
-            text: 'Today Registry',
-            subtext: ''
-        },
+    dailyStatsDoughnutChart = {
         tooltip: {
             trigger: 'item',
         },
@@ -18,7 +14,7 @@ export class ReportsPage implements OnInit {
             {
                 name: 'Daily summary',
                 type: 'pie',
-                radius: ['30%', '50%'],
+                radius: ['50%', '80%'],
                 avoidLabelOverlap: true,
                 label: {
                     normal: {

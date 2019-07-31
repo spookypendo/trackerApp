@@ -10,15 +10,26 @@
 </ion-header>
 
 <ion-content>
-    <ion-card>
-      <ion-card-content>
-        <div echarts [options]="dailyStatsDoughnutChart"></div>
-        {{count_total}}
-      </ion-card-content>
+    <ion-card class="smallCard">
+      <div class="statsLabel"><ion-icon name="arrow-back"></ion-icon></div>
+      <div class ="sidebysideStats">   
+        <div class="titleStats"><h6>Today's Registry</h6></div>
+        <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">80</p><p>TOTAL</p></div>
+        <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">50</p><p>ATTENDED</p></div>
+        <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">20</p><p>MISSED</p></div>
+        <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">10</p><p>TRACKED</p></div>
+      </div>
+      <div class="doughChart" echarts [options]="dailyStatsDoughnutChart"></div>
+      <div class="statsLabel"><ion-icon name="arrow-forward"></ion-icon></div>
     </ion-card>
-    <ion-card>
-      <ion-card-content>
-        <div echarts [options]="weeklyStatsBarChart" class="weekly-stats"></div>
-      </ion-card-content>
+    <ion-card class= "largeCard">
+        <div class="barChart" echarts [options]="weeklyStatsBarChart" class="weekly-stats"></div>
+        <div class ="sidebysideStats">   
+          <div class="titleStats"><h6>Today's Registry</h6></div>
+          <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">80</p><p>TOTAL</p></div>
+          <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">50</p><p>ATTENDED</p></div>
+          <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">20</p><p>MISSED</p></div>
+          <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">10</p><p>TRACKED</p></div>
+        </div>
     </ion-card>
 </ion-content>

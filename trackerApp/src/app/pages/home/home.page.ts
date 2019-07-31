@@ -20,10 +20,10 @@ import {PromiseToCome} from '../../models/promise-to-come.model';
 export class HomePage implements OnInit {
 
   weeklyStatsBarChart = {
-    title : {
-        text: 'Weekly summary',
-        subtext: ''
-    },
+    //title : {
+      //  text: 'Weekly summary',
+      //  subtext: ''
+    //},
     tooltip : {
         trigger: 'item'
     },
@@ -87,10 +87,10 @@ export class HomePage implements OnInit {
   };
 
   dailyStatsDoughnutChart = {
-    title : {
-        text: 'Today Registry',
-        subtext: ''
-    },
+    //title : {
+      //  text: 'Todays Registry',
+      //  subtext: ''
+    //},
     tooltip: {
         trigger: 'item',
     },
@@ -98,7 +98,7 @@ export class HomePage implements OnInit {
         {
             name: 'Daily summary',
             type: 'pie',
-            radius: ['30%', '50%'],
+            radius: ['50%', '80%'],
             avoidLabelOverlap: true,
             label: {
                 normal: {

@@ -20,7 +20,7 @@ ion-menu{
       }
 
       ion-header{
-        min-height:112px!important;
+        height:20%!important;
         --ion-background-color: linear-gradient(to bottom right, #247DC7, #34A9B3);
       }
 }
@@ -30,9 +30,11 @@ ion-header{
   --ion-text-color: #FFFFFF;
 }
 
+ion-content{
+  --ion-background-color: #f5f5f5;
+}
 ion-card{
-  --color: #FFFFFF;
-  background-color: red;
+  background-color:#FFFFFF!important;
 }
 
 ion-icon{
