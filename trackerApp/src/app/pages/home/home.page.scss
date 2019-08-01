@@ -46,6 +46,24 @@ ion-icon{
   color:#424242;
 }
 
+// Bar chart section styling
+
+
+.barChart{
+  height: 65%;
+}
+
+.barTitleStats h6{
+  margin-left:5%;
+
+}
+
+.barSideStats{
+  margin-top: 5%;
+  border-top: 1px solid #000;
+  height: 30%;
+}
+
 @media screen and (orientation: portrait) {
   .weekly-stats {
     width: 0.7;
