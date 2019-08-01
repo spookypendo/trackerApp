@@ -31,7 +31,7 @@ export class HomePage implements OnInit {
         data: [ 'Attended', 'Tracked', 'Missed'],
         x: 'right',
         orient: 'horizontal',
-        textStyle: {fontSize: 10},
+        textStyle: {fontFamily: 'Roboto', fontSize: 10},
         itemGap: 5,
         itemWidth: 10,
         symbolRadius: 0
@@ -113,7 +113,7 @@ export class HomePage implements OnInit {
                 emphasis: {
                     show: false,
                     textStyle: {
-                        fontSize: '30',
+                        fontSize: '10',
                         fontWeight: 'bold'
                     }
                 }
@@ -135,6 +135,6 @@ export class HomePage implements OnInit {
   constructor(private appService: AppService) {}
 
   ngOnInit() {
-    
+
   }
 }

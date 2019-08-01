@@ -19,11 +19,18 @@ ion-menu{
           --ion-text-color: #FFFFFF;
       }
 
-      ion-header{
+      #mainHeader{
         height:20%!important;
-        --ion-background-color: linear-gradient(to bottom right, #247DC7, #34A9B3);
+        background-color: #2786C4!important;
+        --ion-background-color:none!important;
+        padding-top:5%;
       }
-}
+
+      ion-note{
+        color:#F5F5F5;
+      }
+    }
+      
 
 ion-header{
   --ion-background-color: #00A0D4;
