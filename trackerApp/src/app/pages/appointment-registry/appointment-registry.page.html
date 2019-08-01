@@ -7,17 +7,26 @@
       Registry
     </ion-title>
   </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar></ion-searchbar>
   <ion-list class="appointments__list">
-    <ion-item class="appointment" [routerLink]="['/appointment-summary/', appointment.patient_ID]" routeDirection="forward" *ngFor="let appointment of appointments">
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label style="color: #424242;">List of Appointments</ion-label>
+        <ion-badge color="primary" slot="end" style="margin-right:5%">19</ion-badge>
+      </ion-item-divider>
+      <ion-item lines="none" class="appointment" [routerLink]="['/appointment-summary/', appointment.patient_ID]" routeDirection="forward" *ngFor="let appointment of appointments">
         <ion-label>
           <h3>PID: {{ appointment.patient_ID }} </h3>
-          <p>Appointment: {{ appointment.Appointment_date | date }} </p>
-          <p>Status: </p>
+          <p>Appointment: <span style="font-weight:bold">{{ appointment.Appointment_date | date }} </span></p>
+          <p>Status: <span style="font-weight:bold">{{ appointment.Appointment_outcome }}</span></p>
         </ion-label>
-    </ion-item>
+        <ion-note slot="end" style="color:#2CA062;">UPDATE</ion-note>
+      </ion-item>
+    </ion-item-group>
   </ion-list>
 </ion-content>

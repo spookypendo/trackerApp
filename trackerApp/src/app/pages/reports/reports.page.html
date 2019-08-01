@@ -7,28 +7,31 @@
       Reports
     </ion-title>
   </ion-toolbar>
+<ion-toolbar>
+<ion-tabs>
+      <ion-tab-bar slot="top">
+        <ion-tab-button tab="Week">
+          <ion-label>WEEK</ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button tab="Month">
+          <ion-label>MONTH</ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button tab="threeMonth">
+          <ion-label>3 MONTHS</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-tabs>
-    <ion-tab-bar slot="top">
-      <ion-tab-button tab="Week">
-        <ion-label>WEEK</ion-label>
-      </ion-tab-button>
 
-      <ion-tab-button tab="Month">
-        <ion-label>MONTH</ion-label>
-      </ion-tab-button>
-
-      <ion-tab-button tab="threeMonth">
-        <ion-label>3 MONTHS</ion-label>
-      </ion-tab-button>
-    </ion-tab-bar>
-  </ion-tabs>
   <ion-card class="small-card">
       <div class="statsLabel"><ion-icon name="arrow-back"></ion-icon></div>
       <div class ="sidebysideStats">   
-        <div class="titleStats"><h6>Today's Registry</h6></div>
+        <div class="titleStats"><h6>22 - 28 Aug Registry</h6></div>
         <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">80</p><p>TOTAL</p></div>
         <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">50</p><p>ATTENDED</p></div>
         <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">20</p><p>MISSED</p></div>
@@ -39,68 +42,65 @@
     </ion-card>
 <ion-card>
     <ion-grid>
-        <ion-row>
-            <ion-col><div>Day</div></ion-col>
-            <ion-col><div>Attended</div></ion-col>
-            <ion-col><div>Missed</div></ion-col>
-            <ion-col><div>Tracked</div></ion-col>
-            <ion-col><div>Actions</div></ion-col>
+        <ion-row class="tableHeader" style="background-color: #00A0D4;">
+            <ion-col size="3"><div>Day</div></ion-col>
+            <ion-col size="3"><div>Attended</div></ion-col>
+            <ion-col size="3"><div>Missed</div></ion-col>
+            <ion-col size="3"><div>Tracked</div></ion-col>
         </ion-row>
         <ion-row>
-            <ion-col><div>Mon</div></ion-col>
-            <ion-col><div>23</div></ion-col>
-            <ion-col><div>10</div></ion-col>
-            <ion-col><div>15</div></ion-col>
-            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+            <ion-col size="3"><div>Mon</div></ion-col>
+            <ion-col size="3"><div>23</div></ion-col>
+            <ion-col size="3"><div>10</div></ion-col>
+            <ion-col size="3"><div>15</div></ion-col>
         </ion-row>
         <ion-row>
-            <ion-col><div>Tue</div></ion-col>
-            <ion-col><div>40</div></ion-col>
-            <ion-col><div>13</div></ion-col>
-            <ion-col><div>6</div></ion-col>
-            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+            <ion-col size="3"><div>Tue</div></ion-col>
+            <ion-col size="3"><div>40</div></ion-col>
+            <ion-col size="3"><div>13</div></ion-col>
+            <ion-col size="3"><div>6</div></ion-col>
         </ion-row>
         <ion-row>
-            <ion-col><div>Wed</div></ion-col>
-            <ion-col><div>34</div></ion-col>
-            <ion-col><div>3</div></ion-col>
-            <ion-col><div>3</div></ion-col>
-            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+            <ion-col size="3"><div>Wed</div></ion-col>
+            <ion-col size="3"><div>34</div></ion-col>
+            <ion-col size="3"><div>3</div></ion-col>
+            <ion-col size="3"><div>3</div></ion-col>
         </ion-row>
         <ion-row>
-            <ion-col><div>Thu</div></ion-col>
-            <ion-col><div>54</div></ion-col>
-            <ion-col><div>11</div></ion-col>
-            <ion-col><div>4</div></ion-col>
-            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+            <ion-col size="3"><div>Thu</div></ion-col>
+            <ion-col size="3"><div>54</div></ion-col>
+            <ion-col size="3"><div>11</div></ion-col>
+            <ion-col size="3"><div>4</div></ion-col>
         </ion-row>
         <ion-row>
-            <ion-col><div>Fri</div></ion-col>
-            <ion-col><div>43</div></ion-col>
-            <ion-col><div>3</div></ion-col>
-            <ion-col><div>3</div></ion-col>
-            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+            <ion-col size="3"><div>Fri</div></ion-col>
+            <ion-col size="3"><div>43</div></ion-col>
+            <ion-col size="3"><div>3</div></ion-col>
+            <ion-col size="3"><div>3</div></ion-col>
         </ion-row>
         <ion-row>
-            <ion-col><div>Sat</div></ion-col>
-            <ion-col><div>50</div></ion-col>
-            <ion-col><div>0</div></ion-col>
-            <ion-col><div>0</div></ion-col>
-            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+            <ion-col size="3"><div>Sat</div></ion-col>
+            <ion-col size="3"><div>50</div></ion-col>
+            <ion-col size="3"><div>0</div></ion-col>
+            <ion-col size="3"><div>0</div></ion-col>
         </ion-row>
         <ion-row>
-            <ion-col><div>Sun</div></ion-col>
-            <ion-col><div>60</div></ion-col>
-            <ion-col><div>4</div></ion-col>
-            <ion-col><div>5</div></ion-col>
-            <ion-col><div><ion-button href="#" size="small" color="secondary">View info</ion-button></div></ion-col>
+            <ion-col size="3"><div>Sun</div></ion-col>
+            <ion-col size="3"><div>60</div></ion-col>
+            <ion-col size="3"><div>4</div></ion-col>
+            <ion-col size="3"><div>5</div></ion-col>
         </ion-row>
       </ion-grid>
     </ion-card>
-    <ion-card>
-    <ion-card-content>
-      <div echarts [options]="reportsBar"></div>
-    </ion-card-content>
+    <ion-card class= "largeCard">
+        <div class="barTitleStats"><h6>Weekly Summary</h6></div>
+        <div class="barChart" echarts [options]="reportsBar"></div>
+        <div class ="barSideStats">   
+            <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">80</p><p>TOTAL</p></div>
+            <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">50</p><p>ATTENDED</p></div>
+            <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">20</p><p>MISSED</p></div>
+            <div class="sideStats"><p style="font-size: 15px; font-weight: bold;">10</p><p>TRACKED</p></div>
+        </div>
   </ion-card>
 
 </ion-content>

@@ -44,33 +44,38 @@ export class ReportsPage implements OnInit {
     };
 
     reportsBar = {
-    title : {
-      text: 'Weekly summary',
-      subtext: '22 - 28 July 2019'
-    },
-    tooltip : {
+        tooltip : {
         trigger: 'axis',
         axisPointer : {
             type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
         }
     },
     legend: {
-        data: [ 'Attended', 'Missed', 'Tracked'],
+        data: [ 'Attended', 'Tracked', 'Missed'],
         x: 'right',
-        orient: 'vertical'
+        orient: 'horizontal',
+        textStyle: {fontFamily: 'Roboto', fontSize: 10},
+        itemGap: 5,
+        itemWidth: 10,
+        symbolRadius: 0
     },
     grid: {
         left: '3%',
         right: '4%',
         bottom: '3%',
+        top: '15%',
         containLabel: true
     },
     xAxis:  {
-        type: 'value'
+        type: 'value',
+        show: true
     },
     yAxis: {
         type: 'category',
-        data: [ 'Mon', 'Tues', 'Wedn', 'Thur', 'Fri', 'Sat', 'Sun']
+        data: [ 'Mon', 'Tues', 'Wedn', 'Thur', 'Fri', 'Sat', 'Sun'],
+        axisTick: {
+            alignWithLabel: true
+          }
     },
     series: [
         {
@@ -79,7 +84,7 @@ export class ReportsPage implements OnInit {
             stack: '总量',
             label: {
                 normal: {
-                    show: true,
+                    show: false,
                     position: 'insideRight'
                 }
             },
@@ -92,7 +97,7 @@ export class ReportsPage implements OnInit {
             stack: '总量',
             label: {
                 normal: {
-                    show: true,
+                    show: false,
                     position: 'insideRight'
                 }
             },
@@ -105,7 +110,7 @@ export class ReportsPage implements OnInit {
             stack: '总量',
             label: {
                 normal: {
-                    show: true,
+                    show: false,
                     position: 'insideRight'
                 }
             },

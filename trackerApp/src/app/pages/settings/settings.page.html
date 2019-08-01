@@ -11,55 +11,54 @@
 
 <ion-content>
   
-
-<ion-item-group>
-    <ion-item-divider>
-      <ion-label>ACCOUNT</ion-label>
-    </ion-item-divider>
-  
-    <ion-item class="trackerDetails">
-      <ion-icon slot="start" name="person"></ion-icon>
-      <ion-label>Emmanuel John</ion-label>
-    </ion-item>
-    <ion-item class="trackerDetails">
-      <ion-icon slot="start" name="briefcase"></ion-icon>
-      <ion-label>Tracker Manager</ion-label>
-    </ion-item>
-    <ion-item class="trackerDetails">
-      <ion-icon slot="start" name="mail"></ion-icon>
-      <ion-label>emmanueljohn@gmail.com</ion-label>
-    </ion-item>
-    <ion-item class="trackerDetails">
-      <ion-icon slot="start" name="lock"></ion-icon>
-      <ion-label>********</ion-label>
-    </ion-item>
-  </ion-item-group>
-
+  <ion-card>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>ACCOUNT</ion-label>
+      </ion-item-divider>
+      <ion-item lines="none" class="trackerDetails">
+        <ion-icon slot="start" name="person"></ion-icon>
+        <ion-label>John Doe</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="trackerDetails">
+        <ion-icon slot="start" name="briefcase"></ion-icon>
+        <ion-label>Tracker Manager</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="trackerDetails">
+        <ion-icon slot="start" name="mail"></ion-icon>
+        <ion-label>johndoe@gmail.com</ion-label>
+      </ion-item>
+      <ion-item lines="none" class="trackerDetails">
+        <ion-icon slot="start" name="lock"></ion-icon>
+        <ion-label>********</ion-label>
+      </ion-item>
+    </ion-item-group>
+  </ion-card>
+  <ion-card>
   <ion-item-group>
       <ion-item-divider>
         <ion-label>MANAGE TRACKERS</ion-label>
       </ion-item-divider>
     
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>Add new tracker</ion-label>
         <ion-icon name="add" slot="end"></ion-icon>
       </ion-item>
-      <ion-item>
+      <ion-item lines="none">
         <ion-label>Edit tracker</ion-label>
         <ion-icon name="create" slot="end"></ion-icon>
       </ion-item>
     </ion-item-group>
-
+  </ion-card>
+<ion-card>
     <ion-item-group>
         <ion-item-divider>
           <ion-label>APPLICATION</ion-label>
         </ion-item-divider>
-        <ion-item>
+        <ion-item lines="none">
           <ion-label>Notifications</ion-label>
           <ion-toggle color="primary"></ion-toggle>
         </ion-item>
-        <ion-item>
-            <ion-label>Theme</ion-label>
-        </ion-item>
       </ion-item-group>
+    </ion-card>
 </ion-content>

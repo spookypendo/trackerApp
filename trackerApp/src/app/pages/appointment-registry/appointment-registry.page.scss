@@ -1,0 +1,27 @@
+ion-content{
+    --ion-background-color:#FFFFFF;
+}
+.appointment:nth-of-type(even){
+    --ion-background-color: #FFFFFF!important;
+  }
+
+  .appointment:nth-of-type(odd){
+    --ion-background-color: #FAFAFA!important;
+  }
+
+  .appointment__list ion-item{
+      border-bottom: 0px!important;
+  }
+
+  .appointment h3{
+    font-weight: bold; 
+    color: #11385B;
+  }
+
+  .appointment p{
+    font-size:12px;
+  }
+
+  ion-searchbar{
+    --background:white;
+  }

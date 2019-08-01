@@ -20,10 +20,6 @@ import {PromiseToCome} from '../../models/promise-to-come.model';
 export class HomePage implements OnInit {
 
   weeklyStatsBarChart = {
-    // title : {
-      //  text: 'Weekly summary',
-      //  subtext: ''
-    // },
     tooltip : {
         trigger: 'item'
     },

@@ -6,3 +6,31 @@
     }
   }
 }
+
+ion-content{
+  --ion-background-color:#FFFFFF;
+}
+.missed_appointment:nth-of-type(even){
+  --ion-background-color: #FFFFFF!important;
+}
+
+.missed_appointment:nth-of-type(odd){
+  --ion-background-color: #FAFAFA!important;
+}
+
+.missed_appointment_list ion-item{
+    border-bottom: 0px!important;
+}
+
+.missed_appointment h3{
+  font-weight: bold; 
+  color: #11385B;
+}
+
+.missed_appointment p{
+  font-size:12px;
+}
+
+ion-searchbar{
+  --background:white;
+}

@@ -47,6 +47,45 @@ ion-grid{
     }
 }
 
-ion-button{
-    font-size: 14sp;
+ion-col{
+    text-align: center;
+    font-size: 85%;
 }
+
+.tableHeader ion-col{
+    color:#ffffff;
+    font-size: 90%;
+}
+
+ion-row:nth-of-type(odd){
+    background-color: #F5F5F5;
+}
+
+//Styling for Bar chart section
+
+.largeCard{
+    height:70%!important;
+    padding: 1%;
+  }
+  .barChart{
+    height: 60%;
+  }
+  
+  .barTitleStats h6{
+    margin-left:5%;
+  
+  }
+  
+  .barSideStats{
+    margin-top: 3%;
+    border-top: 1px solid #EEEEEE;
+    height: 18%;
+  }
+  
+  .barSideStats .sideStats:not(:last-of-type){
+    border-right: 1px solid #EEEEEE;
+  }
+  
+  .barSideStats .sideStats{
+    margin-top: 2%;
+  }
