@@ -100,7 +100,7 @@ var visitRegistries = mongoose.model('visitRegistries', new Schema({
     });
 
 
-    // View appointments
+    // View appointments by date
     app.get('/view/appointments/:date', function(req, res) {
 
         console.log("fetching appointments");
@@ -108,6 +108,21 @@ var visitRegistries = mongoose.model('visitRegistries', new Schema({
         appointmentRegistries.find({Appointment_date:req.params.date}, function(err, appointments) {
 
             // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            if (err)
+                res.send(err)
+
+            res.json(appointments); // return data in JSON format
+        });
+    });
+
+    // View appointments by appointment status
+    app.get('/view/appointments/by-status/:appointment_outcome', function(req, res) {
+
+        console.log("fetching appointments");
+
+        appointmentRegistries.find({Appointment_outcome:req.params.appointment_outcome}, function(err, appointments) {
+
+            // if there is an error retrieving, send the error. nothing   after res.send(err) will execute
             if (err)
                 res.send(err)
 
@@ -131,17 +146,17 @@ var visitRegistries = mongoose.model('visitRegistries', new Schema({
     });
 
     // View appointments details for a specific patient
-    app.get('/view/appointments/:patient_ID', function(req, res) {
+    app.get('/view/appointments/by-id/:patient_ID', function(req, res) {
 
-        console.log("fetching appointment details");
+        console.log("fetching appointments");
 
-        appointmentRegistries.find({patient_ID:"07-01-0100-38606"}, function(err, appointment_details) {
+        appointmentRegistries.find({patient_ID:req.params.patient_ID}, function(err, appointments) {
 
-            // if there is an error retrieving, send the error. nothing after res.send(err) will execute
+            // if there is an error retrieving, send the error. nothing   after res.send(err) will execute
             if (err)
                 res.send(err)
 
-            res.json(appointment_details); // return data in JSON format
+            res.json(appointments); // return data in JSON format
         });
     });
 

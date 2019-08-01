@@ -16,7 +16,7 @@ export class AppComponent {
       icon: 'paper'
     },
     {
-      title: 'Appointment registry',
+      title: 'Appointment Registry',
       url: '/appointment-registry',
       icon: 'person'
     },
