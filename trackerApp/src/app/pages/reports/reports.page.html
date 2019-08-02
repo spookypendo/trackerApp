@@ -40,58 +40,95 @@
       <div class="doughChart" echarts [options]="dailyStatsDoughnutChart"></div>
       <div class="statsLabel"><ion-icon name="arrow-forward"></ion-icon></div>
     </ion-card>
-<ion-card>
-    <ion-grid>
-        <ion-row class="tableHeader" style="background-color: #00A0D4;">
-            <ion-col size="3"><div>Day</div></ion-col>
-            <ion-col size="3"><div>Attended</div></ion-col>
-            <ion-col size="3"><div>Missed</div></ion-col>
-            <ion-col size="3"><div>Tracked</div></ion-col>
+
+    <ion-card>
+      <ion-grid class="summaryStats">
+          <ion-row class="tableHeader" style="background-color: #00A0D4;">
+              <ion-col size="9"><div>Summary Statistics</div></ion-col>
+              <ion-col size="3" class="avgStat"><div></div></ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col size="9"><div>Average Appointments</div></ion-col>
+              <ion-col size="3" class="avgStat"><div>23</div></ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col size="9"><div>Average Attended</div></ion-col>
+              <ion-col size="3" class="avgStat"><div>40</div></ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col size="9"><div>Average Missed</div></ion-col>
+              <ion-col size="3" class="avgStat"><div>34</div></ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col size="9"><div>Average Tracked</div></ion-col>
+              <ion-col size="3" class="avgStat"><div>54</div></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="9"><div>Promise-To-Come</div></ion-col>
+            <ion-col size="3" class="avgStat"><div>27</div></ion-col>
         </ion-row>
-        <ion-row>
-            <ion-col size="3"><div>Mon</div></ion-col>
-            <ion-col size="3"><div>23</div></ion-col>
-            <ion-col size="3"><div>10</div></ion-col>
-            <ion-col size="3"><div>15</div></ion-col>
+          <ion-row>
+            <ion-col size="9"><div>Changed Facilities</div></ion-col>
+            <ion-col size="3" class="avgStat"><div>1</div></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="9"><div>Lost to Follow Up</div></ion-col>
+            <ion-col size="3" class="avgStat"><div>4</div></ion-col>
         </ion-row>
-        <ion-row>
-            <ion-col size="3"><div>Tue</div></ion-col>
-            <ion-col size="3"><div>40</div></ion-col>
-            <ion-col size="3"><div>13</div></ion-col>
-            <ion-col size="3"><div>6</div></ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="3"><div>Wed</div></ion-col>
-            <ion-col size="3"><div>34</div></ion-col>
-            <ion-col size="3"><div>3</div></ion-col>
-            <ion-col size="3"><div>3</div></ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="3"><div>Thu</div></ion-col>
-            <ion-col size="3"><div>54</div></ion-col>
-            <ion-col size="3"><div>11</div></ion-col>
-            <ion-col size="3"><div>4</div></ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="3"><div>Fri</div></ion-col>
-            <ion-col size="3"><div>43</div></ion-col>
-            <ion-col size="3"><div>3</div></ion-col>
-            <ion-col size="3"><div>3</div></ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="3"><div>Sat</div></ion-col>
-            <ion-col size="3"><div>50</div></ion-col>
-            <ion-col size="3"><div>0</div></ion-col>
-            <ion-col size="3"><div>0</div></ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col size="3"><div>Sun</div></ion-col>
-            <ion-col size="3"><div>60</div></ion-col>
-            <ion-col size="3"><div>4</div></ion-col>
-            <ion-col size="3"><div>5</div></ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card>
+        </ion-grid>
+      </ion-card>
+      <ion-card>
+        <ion-grid class="centeredCols">
+            <ion-row class="tableHeader" style="background-color: #00A0D4;">
+                <ion-col size="3"><div>Day</div></ion-col>
+                <ion-col size="3"><div>Attended</div></ion-col>
+                <ion-col size="3"><div>Missed</div></ion-col>
+                <ion-col size="3"><div>Tracked</div></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"><div>Mon</div></ion-col>
+                <ion-col size="3"><div>23</div></ion-col>
+                <ion-col size="3"><div>10</div></ion-col>
+                <ion-col size="3"><div>15</div></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"><div>Tue</div></ion-col>
+                <ion-col size="3"><div>40</div></ion-col>
+                <ion-col size="3"><div>13</div></ion-col>
+                <ion-col size="3"><div>6</div></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"><div>Wed</div></ion-col>
+                <ion-col size="3"><div>34</div></ion-col>
+                <ion-col size="3"><div>3</div></ion-col>
+                <ion-col size="3"><div>3</div></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"><div>Thu</div></ion-col>
+                <ion-col size="3"><div>54</div></ion-col>
+                <ion-col size="3"><div>11</div></ion-col>
+                <ion-col size="3"><div>4</div></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"><div>Fri</div></ion-col>
+                <ion-col size="3"><div>43</div></ion-col>
+                <ion-col size="3"><div>3</div></ion-col>
+                <ion-col size="3"><div>3</div></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"><div>Sat</div></ion-col>
+                <ion-col size="3"><div>50</div></ion-col>
+                <ion-col size="3"><div>0</div></ion-col>
+                <ion-col size="3"><div>0</div></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="3"><div>Sun</div></ion-col>
+                <ion-col size="3"><div>60</div></ion-col>
+                <ion-col size="3"><div>4</div></ion-col>
+                <ion-col size="3"><div>5</div></ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
     <ion-card class= "largeCard">
         <div class="barTitleStats"><h6>Weekly Summary</h6></div>
         <div class="barChart" echarts [options]="reportsBar"></div>

@@ -28,8 +28,8 @@ margin-top: 5%;
 
 .sideStats{
     float: left;
-    width: 24%;
-    margin-left:1%;
+    width: 25%;
+    //margin-left:1%;
 }
 
 .sideStats p{
@@ -47,9 +47,21 @@ ion-grid{
     }
 }
 
-ion-col{
+.centeredCols ion-col{
     text-align: center;
     font-size: 85%;
+}
+
+.summaryStats ion-col{
+  font-size: 85%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.avgStat{
+  text-align: center;
+  color:#113A58;
+  font-weight: bold!important;
 }
 
 .tableHeader ion-col{
