@@ -7,9 +7,17 @@ ion-label{
 }
 
 ion-content{
-    --ion-text-color: #424242;
-}
-
+    --ion-background-color: #f5f5f5;
+  }
+  
+  ion-card{
+    background-color:#FFFFFF!important;
+  }
+  
 ion-button{
     color: #ccc;
 }
+
+ion-item-group{
+    background-color:#FFFFFF!important;
+  }
